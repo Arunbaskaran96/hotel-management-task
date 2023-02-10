@@ -9,7 +9,7 @@ const bookings = require("../Models/BookingModel");
 router.post("/booking", authverify, userverify, (req, res) => {
   const userid = req.uniqueId;
 
-  const roomid = req.headers._id;
+  const roomid = req.body._id;
 
   const room = rooms
     .findOne({ _id: roomid })
